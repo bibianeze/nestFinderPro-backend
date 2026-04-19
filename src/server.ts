@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db";
 import authRoutes from "./routes/authRoutes";
 import propertyRoutes from "./routes/propertyRoutes";
+import enquiryRoutes from "./routes/enquiryRoutes";
 
 // Load environment variables first
 dotenv.config();
@@ -52,6 +53,7 @@ app.use(
 // ============================================================
 app.use("/api/auth", authRoutes);
 app.use("/api/properties", propertyRoutes);
+app.use("/api/enquiries", enquiryRoutes);
 
 // Health check — to confirm server is running
 app.get("/api/health", (_req, res) => {
